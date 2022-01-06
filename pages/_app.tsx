@@ -1,12 +1,12 @@
 import { PaletteMode, } from "@mui/material";
+import Box from "@mui/material/Box";
+import { grey, } from "@mui/material/colors";
 import Container from "@mui/material/Container";
-import { grey } from '@mui/material/colors';
 import { createTheme, ThemeOptions, ThemeProvider, } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import type { AppProps, } from "next/app";
 import { useMemo, useState, } from "react";
 import Navbar from "../components/navbar";
-import Box from '@mui/material/Box';
 
 import "../styles/globals.css";
 import styles from "../styles/globals.module.css";
@@ -28,10 +28,12 @@ function Cv({ Component, pageProps, }: AppProps,) {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<Box sx={{
-				color: 'text.primary',
-				bgcolor: 'background.default',
-			}}>
+			<Box
+				sx={{
+					color: "text.primary",
+					bgcolor: "background.default",
+				}}
+			>
 				<Navbar mode={mode} setMode={setMode} />
 				<br />
 				<Container maxWidth="md">
@@ -51,20 +53,21 @@ function Cv({ Component, pageProps, }: AppProps,) {
 }
 export default Cv;
 function getDesignTokens(mode: PaletteMode,): ThemeOptions {
-	if (mode === "dark")
+	if (mode === "dark") {
 		return {
 			palette: {
 				mode: "dark",
 				background: {
 					default: grey[700],
 					paper: grey[900],
-				}
+				},
 			},
 		};
-	else
+	} else {
 		return {
 			palette: {
-				mode: "light"
-			}
+				mode: "light",
+			},
 		};
+	}
 }

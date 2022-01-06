@@ -1,7 +1,7 @@
-import type { GetStaticProps, NextPage, InferGetStaticPropsType, } from "next";
-import projects from "../components/projects.json";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage, } from "next";
 import { parse, } from "node-html-parser";
 import Project from "../components/project_home";
+import projects from "../components/projects.json";
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
 	{ metadata, },

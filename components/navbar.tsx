@@ -1,14 +1,14 @@
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import type { PaletteMode, } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import type { PaletteMode } from "@mui/material";
 import Link from "next/link";
 import type { Dispatch, SetStateAction, } from "react";
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const NavLink = (
 	{ name = "", link = "", }: { name?: string; link?: string; },
