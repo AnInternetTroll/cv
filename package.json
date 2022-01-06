@@ -4,9 +4,9 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "NODE_OPTIONS=--openssl-legacy-provider next build",
 		"start": "next start",
-		"export": "next export",
+		"export": "NODE_OPTIONS=--openssl-legacy-provider next export",
 		"lint": "next lint",
 		"format": "dprint fmt"
 	},
