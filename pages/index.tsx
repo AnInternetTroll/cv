@@ -1,9 +1,9 @@
-import type { GetServerSideProps, InferGetServerSidePropsType, NextPage, } from "next";
-import Image from "next/image";
+import type { GetStaticProps, NextPage, InferGetStaticPropsType, } from "next";
+import projects from "../components/projects.json";
 import { parse, } from "node-html-parser";
 import Project from "../components/project_home";
 
-const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
+const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
 	{ metadata, },
 ) => {
 	return (
@@ -39,8 +39,7 @@ const Home: NextPage<InferGetServerSidePropsType<typeof getServerSideProps>> = (
 	);
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-	const { default: projects, } = await import("../components/projects.json");
+export const getStaticProps: GetStaticProps = async () => {
 	const responses = projects.map((link,) => fetch(link.url,).then((res,) => res.text()));
 	const htmls = await Promise.all(responses,);
 	return { props: { metadata: htmls.map(getMetadata,), }, };
