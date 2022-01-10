@@ -13,7 +13,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
 				Luca
 			</h1>
 			<img
-				src={`.${config.basePath}/luca.jpg`}
+				src={`${config.basePath}/luca.jpg`}
 				width="100%"
 				height="auto"
 			/>
