@@ -2,6 +2,7 @@ import type { GetStaticProps, InferGetStaticPropsType, NextPage, } from "next";
 import { parse, } from "node-html-parser";
 import Project from "../components/project_home";
 import projects from "../components/projects.json";
+import config from "../next.config.js";
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
 	{ metadata, },
@@ -12,7 +13,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
 				Luca
 			</h1>
 			<img
-				src="/luca.jpg"
+				src={`./${config.basePath}/luca.jpg`}
 				width="100%"
 				height="auto"
 			/>

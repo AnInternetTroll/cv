@@ -18,7 +18,7 @@ export default function Soknad() {
 				TypeScript (+ React) og Python.
 			</Typography>
 			<img
-				src="/grades.png"
+				src="./grades.png"
 				width="100%"
 				height="auto"
 			/>
